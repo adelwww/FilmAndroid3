@@ -15,6 +15,8 @@ public class Film {
     String producer;
     @SerializedName("description")
     String description;
+    @SerializedName("image")
+    String image;
 
 
     public String getId() {
@@ -63,5 +65,13 @@ public class Film {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

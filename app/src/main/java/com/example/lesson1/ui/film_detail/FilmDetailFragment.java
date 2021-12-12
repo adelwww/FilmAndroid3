@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.lesson1.App;
 import com.example.lesson1.R;
 import com.example.lesson1.data.models.Film;
@@ -29,7 +30,7 @@ public class FilmDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentFilmDetailBinding.inflate(inflater,container,false);
+        binding = FragmentFilmDetailBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -37,6 +38,9 @@ public class FilmDetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         App.apiService.getFilm(FilmDetailFragmentArgs.fromBundle(getArguments()).getId()).observe(getViewLifecycleOwner(), film -> {
+            Glide.with(binding.filmIm)
+                    .load(film.getImage())
+                    .into(binding.filmIm);
             binding.nameTv.setText(String.valueOf(film.getTitle()));
             binding.originalTv.setText(String.valueOf(film.getOriginal_title()));
             binding.directorTv.setText(String.valueOf(film.getDirector()));

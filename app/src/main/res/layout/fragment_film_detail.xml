@@ -9,7 +9,7 @@
     <View
         android:id="@+id/left_color"
         android:layout_width="5dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_margin="15dp"
         android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         tools:text="Title: ****"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
         android:textStyle="bold"
@@ -33,9 +33,39 @@
         tools:text="@tools:sample/last_names"
         android:textColor="@color/holo_purple"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/film_im"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginEnd="12dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toBottomOf="@id/original_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30sp"/>
+
+    <TextView
+        android:id="@+id/director_tv"
+        android:layout_width="wrap_content"
+        tools:text="Director : ****"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/dark_purple"
+        app:layout_constraintTop_toBottomOf="@id/film_im"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/producer_tv"
+        android:layout_width="wrap_content"
+        tools:text="Producer : ****"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/dark_purple"
+        app:layout_constraintTop_toBottomOf="@id/director_tv"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -44,28 +74,9 @@
         tools:text="Description : ****"
         android:textColor="@color/dark_purple"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintTop_toBottomOf="@id/original_tv"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintTop_toBottomOf="@id/producer_tv"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/director_tv"
-        android:layout_width="wrap_content"
-        tools:text="Director : ****"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
-        android:textColor="@color/dark_purple"
-        app:layout_constraintTop_toBottomOf="@id/description"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/producer_tv"
-        android:layout_width="wrap_content"
-        tools:text="Producer : ****"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
-        android:textColor="@color/dark_purple"
-        app:layout_constraintTop_toBottomOf="@id/director_tv"
-        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
